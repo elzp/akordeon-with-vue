@@ -3,14 +3,14 @@ export default {
   data() {
     return {};
   },
-  props: ['index'],
+  props: ['index', 'visible'],
   method: {},
   template: `
   <article class="border-b">
   <div class="border-l-2 border-transparent">
       <header class="flex justify-between items-center p-5 pl-8 pr-8 cursor-pointer select-none">
           <span class="text-grey-darkest font-thin text-xl">
-           {{index}}Massa vitae tortor condimentum lacinia quis vel eros donec
+           {{index}}
           </span>
           <div class="rounded-full border border-grey w-7 h-7 flex items-center justify-center"
           @click="()=>$emit('change',this.index)">
@@ -21,6 +21,9 @@ export default {
               </svg>
           </div>
       </header>
+      <div v-if="visible">
+      Massa vitae tortor condimentum lacinia quis vel eros donec
+      </div>
   </div>
 </article>`,
 };
